@@ -13,7 +13,6 @@ int main(int argc,char *argv[])	{
 	fp=fopen(argv[1],"r");
 		if(strcmp(argv[1],"1.txt")){
 		r=198;c=200;
-		printf("hello");
 		}
 	else if(strcmp(argv[1],"2.txt"))
 		{r=1200;c=1920;}
@@ -52,7 +51,6 @@ int main(int argc,char *argv[])	{
 	float cumul=0;
 	float freq[256]={0};
 	long double meanA[256]={0} ,meanB[256]={0};
-	printf("hello");
 	cfreq[0]=histo[0];
 	for(i=1;i<256;i++){
 		cfreq[i]=cfreq[i-1]+histo[i];
