@@ -1,0 +1,175 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: Curriculum Vitae
+%
+% Source: http://www.howtotex.com/
+% Feel free to distribute this template, but please keep the
+% referal to HowToTeX.com.
+% Date: July 2011
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX: 
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+% If you're new to LaTeX, the wikibook is a great place to start:
+% http://en.wikibooks.org/wiki/LaTeX
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+							
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+	\textheight=700px                    % Saving trees ;-)
+\usepackage{url}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{%			            % Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{0.5em}}		% Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+		\par \normalsize \normalfont}
+		
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+		
+		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+		\par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}		       % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value	
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{Black}{%
+			\parbox{6em}{%
+			\hfill\color{White}#2}} \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document}
+% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%	\vspace*{-2em}
+%		\includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
+
+\MyName{Munish}
+\sepspace
+%%%MySlogan
+%%%------------------------------------------------------------
+\MySlogan{+918988458963}
+\MySlogan{munish.kr95@gmail.com}
+\MySlogan{\url{www.linkedin.com/in/munishkr95}}
+%%% Personal details
+%%% ------------------------------------------------------------
+%\NewPart{Personal details}{}
+
+%\PersonalEntry{Birth}{May 08,1995}
+%\PersonalEntry{Address}{G2-010, Prashar Hostel,Kamand Campus,IIT Mandi }
+%\PersonalEntry{Phone}{+91-8988458963}
+%\PersonalEntry{Mail}{\url{munish.kr95@gmail.com}}
+%\PersonalEntry{LinkedIn}{\url{www.linkedin.com/in/munishkr95}}
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Education}{}
+
+\EducationEntry{B.Tech  Electrical Engineering}{2015-2019}{IIT Mandi}{Current Cummulative GPA:7.25}
+\sepspace
+
+\EducationEntry{Class XII ISC}{2014}{Sacred Heart Senior Secondary School,Sidhpur,Dharamshala,H.P}{Percentage Score: 90.8}
+\sepspace
+
+\EducationEntry{Class X ICSE}{2012}{Mount Carmel School,Gaggal,Dharamshala,H.P}{Percentage Score: 90.0}
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{PROJECTS}{}
+
+\EducationEntry{Solar System Simulation}{current}{SCRI Club,IIT MANDI}{This is a project by Society for collaborative research and innovation,IIT Mandi , which aims at simulating our solar system including all the n number of bodies present in it.\sepspace Also got a consolation prize in IEEE PEC at DTU,New Delhi}{USING:Programming in c and GNU Octave.}
+\sepspace
+
+\EducationEntry{Thermoelectric Power Generator}{April,2016}{IEEE Student Chapter and Aavishkar,IIT MANDI}{Developed a thermoelctric power generator which made use of fire and peltier modules in order to generate electricity. Energy enough to charge a smartphone was produced using this setup.Also got a consoaltion prize in IEEE PES at DTU,New Delhi}{USED:Arduino, voltage regulators, peltier modules and IR sensors.}
+\sepspace
+
+\EducationEntry{Smart Shoe For Blind}{Dec.,2015}{4th Inter IIT Tech Meet,IIT Mandi}{Developed an IOT based smart shoe for the blind which assisted blind people to walk hustle-free without bumping into things around them.}{USED:Raspberry pi,IR sensors,wifi shield,LED's and alarms.}
+
+%% mini projects
+\NewPart{Mini Projects}
+{Microbial Fuel Cell}\newline
+{Developed a microbial fuel cell which could use waste organic matter to generate electricity at the places where other renewable energy sources cannot be utilized. }{USED:Electrodes,LEDs,Fuel cell, etc.}
+\sepspace
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Skills}{}
+
+%\SkillsEntry{Languages}{Hindi(mother tongue)}
+%\SkillsEntry{}{English (fluent)}
+%\sepspace
+\SkillsEntry{Operating Systems}{\textsc{Windows},\textsc{Linux}}
+\sepspace
+\SkillsEntry{Tools}{\textsc{Raspberry Pi},\textsc{Arduino},\textsc{Beagle-Bone},\textsc{Android Studio}}
+\sepspace
+\SkillsEntry{Programming Languages}{\textsc{C},\textsc{C++}, \textsc{Java}}
+\sepspace
+\SkillsEntry{Web Development}{\textsc{Html},\textsc{CSS}}
+\sepspace
+\SkillsEntry{Softwares}{\textsc{Matlab}, \LaTeX, \textsc{XILINX}, \textsc{Proteus},\textsc{GNU Octave}}
+\sepspace
+\SkillsEntry{Personal}{\textsc{Team Management},\textsc{Team Leadership}, \textsc{Analytical Skills}}
+
+%%% ExtraCurricular
+%%% ------------------------------------------------------------
+\NewPart{Extracurricular}{}
+Core Member,Robotronics Club,IIT MANDI\hfill \break
+Core Member,SCRI Club,IIT MANDI\hfill \\
+Core Member,EXODIA-Annual Cultural and Tech fest,IIT MANDI\hfill \\
+Core Member,Rann-Neeti Annual Sport Fest,IIT MANDI\hfill \\
+Member,Programming Club,IIT MANDI\hfill \break
+
+\end{document}
+
